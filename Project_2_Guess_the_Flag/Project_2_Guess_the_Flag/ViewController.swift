@@ -26,12 +26,13 @@ class ViewController: UIViewController {
             "estonia", "france", "germany", "ireland", "italy", "monaco",
             "nigeria", "poland", "russia", "spain", "uk", "us"
         ]
-        countries.shuffle()
         
         askQuestion()
     }
     
-    func askQuestion() {
+    func askQuestion(action: UIAlertAction! = nil) {
+        countries.shuffle()
+        
         button1.setImage(.init(named: countries[0]), for: .normal)
         button2.setImage(.init(named: countries[1]), for: .normal)
         button3.setImage(.init(named: countries[2]), for: .normal)
@@ -39,5 +40,25 @@ class ViewController: UIViewController {
         correctAnswer = Int.random(in: 0...2)
         
         title = countries[correctAnswer].uppercased()
+    }
+    
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var title: String
+        
+        if sender.tag == correctAnswer {
+            title = "Correct"
+            score += 1
+        } else {
+            title = "Wrong"
+            score -= 1
+        }
+        
+        let alertController = UIAlertController(
+            title: title,
+            message: "Your score \(score)",
+            preferredStyle: .alert
+        )
+        alertController.addAction(.init(title: "Continue", style: .default, handler: askQuestion))
+        present(alertController, animated: true)
     }
 }
