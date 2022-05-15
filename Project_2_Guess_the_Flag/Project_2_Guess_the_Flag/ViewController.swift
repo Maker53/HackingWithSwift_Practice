@@ -17,6 +17,16 @@ class ViewController: UIViewController {
     var correctAnswer = 0
     var score = 0
     
+    private let titleView: UIView = {
+        UIView(frame: CGRect(x: 0, y: 0, width: 110, height: 30))
+    }()
+    private let scoreLabel: UILabel = {
+        UILabel(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
+    }()
+    private let correctFlag: UIImageView = {
+        UIImageView(frame: CGRect(x: 80, y: 0, width: 40, height: 30))
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +36,11 @@ class ViewController: UIViewController {
             "estonia", "france", "germany", "ireland", "italy", "monaco",
             "nigeria", "poland", "russia", "spain", "uk", "us"
         ]
+        
+        titleView.addSubview(scoreLabel)
+        titleView.addSubview(correctFlag)
+        
+        navigationItem.titleView = titleView
         
         askQuestion()
     }
@@ -39,7 +54,8 @@ class ViewController: UIViewController {
         
         correctAnswer = Int.random(in: 0...2)
         
-        title = countries[correctAnswer].uppercased()
+        scoreLabel.text = "Score: \(score)"
+        correctFlag.image = UIImage(named: countries[correctAnswer])
     }
     
     @IBAction func buttonTapped(_ sender: UIButton) {
