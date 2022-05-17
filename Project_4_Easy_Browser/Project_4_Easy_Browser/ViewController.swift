@@ -28,16 +28,20 @@ class ViewController: UIViewController, WKNavigationDelegate {
         
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
+        let goBack = UIBarButtonItem(barButtonSystemItem: .redo, target: webView, action: #selector(webView.goBack))
+        let goForward = UIBarButtonItem(barButtonSystemItem: .undo, target: webView, action: #selector(webView.goForward))
+        let open = UIBarButtonItem(title: "Open", style: .plain, target: self, action: #selector(openTapped))
         let progressButton = UIBarButtonItem(customView: progressView)
         
         navigationController?.navigationBar.isTranslucent = false
-        navigationItem.rightBarButtonItem = .init(title: "Open", style: .plain, target: self, action: #selector(openTapped))
+        navigationItem.rightBarButtonItems = [goForward, open]
+        navigationItem.leftBarButtonItem = goBack
         toolbarItems = [progressButton ,spacer, refresh]
         navigationController?.isToolbarHidden = false
         
         webView.addObserver(self, forKeyPath: #keyPath(WKWebView.estimatedProgress), options: .new, context: nil)
         
-        let url = URL(string: "https://" + websites[0])!
+        let url = URL(string: "https://" + websites[1])!
         webView.load(URLRequest(url: url))
         webView.allowsBackForwardNavigationGestures = true
     }
@@ -55,12 +59,16 @@ class ViewController: UIViewController, WKNavigationDelegate {
             for website in websites {
                 if host.contains(website) {
                     decisionHandler(.allow)
-                    return
                 }
             }
+        } else {
+            decisionHandler(.cancel)
+            
+            let ac = UIAlertController(title: "It's blocked", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "Ok", style: .default)
+            ac.addAction(okAction)
+            present(ac, animated: true)
         }
-        
-        decisionHandler(.cancel)
     }
     
     @objc private func openTapped() {
