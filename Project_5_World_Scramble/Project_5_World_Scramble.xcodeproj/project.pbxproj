@@ -13,6 +13,7 @@
 		85AF67EC28335BEF00B81FF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AF67EA28335BEF00B81FF6 /* Main.storyboard */; };
 		85AF67EE28335BF700B81FF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85AF67ED28335BF700B81FF6 /* Assets.xcassets */; };
 		85AF67F128335BF700B81FF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85AF67EF28335BF700B81FF6 /* LaunchScreen.storyboard */; };
+		85AF67F928335F4800B81FF6 /* start.txt in Resources */ = {isa = PBXBuildFile; fileRef = 85AF67F828335F4800B81FF6 /* start.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		85AF67ED28335BF700B81FF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85AF67F028335BF700B81FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		85AF67F228335BF700B81FF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85AF67F828335F4800B81FF6 /* start.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = start.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		85AF67E328335BEF00B81FF6 /* Project_5_World_Scramble */ = {
 			isa = PBXGroup;
 			children = (
+				85AF67F828335F4800B81FF6 /* start.txt */,
 				85AF67E428335BEF00B81FF6 /* AppDelegate.swift */,
 				85AF67E628335BEF00B81FF6 /* SceneDelegate.swift */,
 				85AF67E828335BEF00B81FF6 /* ViewController.swift */,
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				85AF67F128335BF700B81FF6 /* LaunchScreen.storyboard in Resources */,
+				85AF67F928335F4800B81FF6 /* start.txt in Resources */,
 				85AF67EE28335BF700B81FF6 /* Assets.xcassets in Resources */,
 				85AF67EC28335BEF00B81FF6 /* Main.storyboard in Resources */,
 			);
