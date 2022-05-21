@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  Project_7_Whitehouse_Petitions
+//  Project_8_Swifty_Words
 //
-//  Created by Станислав on 20.05.2022.
+//  Created by Станислав on 21.05.2022.
 //
 
 import UIKit

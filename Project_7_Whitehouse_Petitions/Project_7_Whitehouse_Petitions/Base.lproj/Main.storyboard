@@ -74,6 +74,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Lq2-2Q-siA">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="int-Lv-Gqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="HPE-Ey-5vW" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="rzC-LZ-tTo"/>
@@ -85,7 +86,6 @@
                         <segue destination="2k2-bY-r2z" kind="relationship" relationship="viewControllers" id="GJ1-a3-frU"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="int-Lv-Gqx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="947.82608695652186" y="112.5"/>
         </scene>
